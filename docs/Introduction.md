@@ -13,6 +13,7 @@ INAV is an community project which attempts to deliver flight controller firmwar
 * Focus on the needs of users.
 * Great flight performance.
 * Understandable and maintainable code.
+* Trial
 
 ## Hardware
 
