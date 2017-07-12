@@ -384,6 +384,7 @@ void updateUsedModeActivationConditionFlags(void)
 #ifdef NAV
     isUsingNAVModes = isModeActivationConditionPresent(BOXNAVPOSHOLD) ||
                         isModeActivationConditionPresent(BOXNAVRTH) ||
-                        isModeActivationConditionPresent(BOXNAVWP);
+                        isModeActivationConditionPresent(BOXNAVWP) ||
+                        isModeActivationConditionPresent(BOXNAVATK);
 #endif
 }

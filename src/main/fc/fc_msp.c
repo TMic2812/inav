@@ -140,6 +140,7 @@ static const box_t boxes[CHECKBOX_ITEM_COUNT + 1] = {
     { BOXTURNASSIST, "TURN ASSIST;", 35 },
     { BOXNAVLAUNCH, "NAV LAUNCH;", 36 },
     { BOXAUTOTRIM, "SERVO AUTOTRIM;", 37 },
+    { BOXNAVATK, "NAV ATK;", 38 },
     { CHECKBOX_ITEM_COUNT, NULL, 0xFF }
 };
 
@@ -285,6 +286,7 @@ static void initActiveBoxIds(void)
         activeBoxIds[activeBoxIdCount++] = BOXNAVWP;
         activeBoxIds[activeBoxIdCount++] = BOXHOMERESET;
         activeBoxIds[activeBoxIdCount++] = BOXGCSNAV;
+        activeBoxIds[activeBoxIdCount++] = BOXNAVATK;
     }
 #endif
 
@@ -368,7 +370,8 @@ static uint32_t packFlightModeFlags(void)
 #endif
         IS_ENABLED(FLIGHT_MODE(NAV_LAUNCH_MODE)) << BOXNAVLAUNCH |
         IS_ENABLED(IS_RC_MODE_ACTIVE(BOXAUTOTRIM)) << BOXAUTOTRIM |
-        IS_ENABLED(IS_RC_MODE_ACTIVE(BOXHOMERESET)) << BOXHOMERESET;
+        IS_ENABLED(IS_RC_MODE_ACTIVE(BOXHOMERESET)) << BOXHOMERESET |
+        IS_ENABLED(FLIGHT_MODE(NAV_ATK_MODE)) << BOXNAVATK;
 
     uint32_t ret = 0;
     for (uint32_t i = 0; i < activeBoxIdCount; i++) {

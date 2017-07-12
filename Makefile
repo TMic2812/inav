@@ -586,6 +586,7 @@ HIGHEND_SRC = \
             io/gps_i2cnav.c \
             io/ledstrip.c \
             io/osd.c \
+            navigation/atkmode.c \
             navigation/navigation.c \
             navigation/navigation_fixedwing.c \
             navigation/navigation_fw_launch.c \
